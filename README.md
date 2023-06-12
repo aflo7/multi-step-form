@@ -1,7 +1,22 @@
-# Vue 3 + Vite
+This is a solution to the Multi-step form challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
+- [URL for my solution is here](https://aflo7.github.io/multi-step-form/)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
+
+
+[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+
+**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+
+## The challenge
+
+Your challenge is to build out this multi-step form and get it looking as close to the design as possible.
+
+
+### Built with
+- HTML, CSS, Javascript
+- Flexbox
+- Mobile-first workflow
+- [Vue](https://vuejs.org/) - Vue.js
