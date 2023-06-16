@@ -215,8 +215,6 @@ import { store } from "./store"
     padding: 15px;
     display: grid;
     gap: 15px;
-    /* box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1); */
-   
 }
 
 .space-between {
