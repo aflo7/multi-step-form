@@ -4,6 +4,7 @@ import { reactive } from "vue"
 export const store = reactive({
     count: 0,
     selectedPlan: "arcade",
+    billing: "monthly",
     addOns: {
         onlineService: false,
         largerStorage: false,

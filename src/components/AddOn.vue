@@ -67,7 +67,7 @@ import { store } from "../store"
 .option {
     border: 2px solid lightgray;
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     gap: 15px;

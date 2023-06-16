@@ -1,5 +1,6 @@
 <script setup>
 import { store } from "../store"
+import MonthlyYearlySlider from "./MonthlyYearlySlider.vue"
 </script>
 
 <template>
@@ -40,6 +41,13 @@ import { store } from "../store"
                 <p>$15/mo</p>
             </div>
         </div>
+
+        <div class="slider-wrapper">
+            <p><strong>Monthly</strong></p>
+            <MonthlyYearlySlider />
+            <p><strong>Yearly</strong></p>
+
+        </div>
     </div>
 </template>
 
@@ -53,7 +61,7 @@ import { store } from "../store"
 .option {
     border: 2px solid lightgray;
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     gap: 15px;
     cursor: pointer;
@@ -62,6 +70,16 @@ import { store } from "../store"
 
 .selected {
     background-color: rgb(247, 248, 254);
-    border: 2px solid black;
+    border: 2px solid rgb(63, 64, 250);
+
+}
+
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgb(247, 248, 254);
+    padding: 15px;
+    align-items: center;
 }
 </style>
