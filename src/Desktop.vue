@@ -125,7 +125,7 @@ import { store } from "./store"
 <style scoped>
 .main-desktop-content {
     display: flex;
-    height: 700px;
+    height: 650px;
     padding: 15px;
     border-radius: 15px;
     background-color: white;
@@ -153,7 +153,7 @@ import { store } from "./store"
 
 .content-right {
     align-self: center;
-    padding: 50px;
+    padding: 20px 50px;
     height: 100%;
     width: 600px;
     display: flex;

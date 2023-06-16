@@ -4,6 +4,11 @@ import { reactive } from "vue"
 export const store = reactive({
     count: 0,
     selectedPlan: "arcade",
+    addOns: {
+        onlineService: false,
+        largerStorage: false,
+        customizableProfile: false
+    },
     increment() {
         if (this.count === 3) return
         this.count++
@@ -13,7 +18,6 @@ export const store = reactive({
         this.count--
     },
     setSelectedPlan(plan) {
-      this.selectedPlan = plan
-
+        this.selectedPlan = plan
     }
 })

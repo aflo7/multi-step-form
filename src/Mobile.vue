@@ -96,6 +96,7 @@ import { store } from "./store.js"
     border-radius: 50%;
     color: white;
     font-weight: bold;
+    text-align: center;
 }
 
 .selected-btn {

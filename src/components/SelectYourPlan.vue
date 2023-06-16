@@ -45,14 +45,15 @@ import { store } from "../store"
 
 <style scoped>
 .plan-wrapper {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
 .option {
     border: 2px solid lightgray;
     border-radius: 5px;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     gap: 15px;
     cursor: pointer;
