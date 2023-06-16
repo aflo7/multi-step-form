@@ -1,8 +1,6 @@
 <script setup>
 import Mobile from "./Mobile.vue"
 import Desktop from "./Desktop.vue"
-
-// import { store } from "./store.js"
 </script>
 
 <template>

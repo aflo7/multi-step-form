@@ -42,10 +42,9 @@ hr {
     gap: 10px;
 }
 
-
-.finishing-up-wrapper >div {
-  display: flex;
-  justify-content: space-between;
+.finishing-up-wrapper > div {
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex-group {
@@ -55,11 +54,10 @@ hr {
 }
 
 .purple-text {
-  color: rgb(63, 60, 247);
-
+    color: rgb(63, 60, 247);
 }
 
 .gray-text {
-  color: gray;
+    color: gray;
 }
 </style>

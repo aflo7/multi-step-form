@@ -5,6 +5,10 @@ export const store = reactive({
     count: 0,
     selectedPlan: "arcade",
     billing: "monthly",
+    thankYouPage: false,
+    showThankYouPage() {
+        this.thankYouPage = true
+    },
     addOns: {
         onlineService: false,
         largerStorage: false,

@@ -4,7 +4,6 @@ import SelectYourPlan from "./components/SelectYourPlan.vue"
 import AddOn from "./components/AddOn.vue"
 import FinishingUp from "./components/FinishingUp.vue"
 import { store } from "./store.js"
-
 </script>
 <template>
     <div class="content-top">
@@ -35,27 +34,47 @@ import { store } from "./store.js"
             </button>
         </div>
 
-        <div class="top-content-wrapper" :class="{ hide: store.count !== 0 }">
-            <PersonalInfo />
+        <div v-if="!store.thankYouPage">
+            <div v-if="store.count === 0" class="top-content-wrapper">
+                <PersonalInfo />
+            </div>
+
+            <div v-if="store.count === 1" class="top-content-wrapper">
+                <SelectYourPlan />
+            </div>
+
+            <div v-if="store.count === 2" class="top-content-wrapper">
+                <AddOn />
+            </div>
+
+            <div v-if="store.count === 3" class="top-content-wrapper">
+                <FinishingUp />
+            </div>
         </div>
 
-        <div class="top-content-wrapper" :class="{ hide: store.count !== 1 }">
-            <SelectYourPlan />
-        </div>
-
-        <div class="top-content-wrapper" :class="{ hide: store.count !== 2 }">
-            <AddOn />
-        </div>
-
-        <div class="top-content-wrapper" :class="{ hide: store.count !== 3 }">
-            <FinishingUp />
+        <div class="thank-you-wrapper" v-if="store.thankYouPage">
+            <div class="thank-you-icon"></div>
+            <p class="thank-you-text">Thank you!</p>
+            <p class="gray-text">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@gmail.com
+            </p>
         </div>
     </div>
 
     <div class="content-middle"></div>
 
-    <div class="content-bottom" :class="{ 'space-between': store.count !== 0 }">
-        <button v-if="store.count !== 0" class="go-back-btn" @click="store.decrement()">
+    <div
+        v-if="!store.thankYouPage"
+        class="content-bottom"
+        :class="{ 'space-between': store.count !== 0 }"
+    >
+        <button
+            v-if="store.count !== 0"
+            class="go-back-btn"
+            @click="store.decrement()"
+        >
             Go Back
         </button>
         <button
@@ -66,14 +85,17 @@ import { store } from "./store.js"
             Next Step
         </button>
 
-        <button class="confirm-btn" :class="{ 'hide': store.count !== 3 }">
+        <button
+            v-if="store.count === 3"
+            class="confirm-btn"
+            @click="store.showThankYouPage"
+        >
             Confirm
         </button>
     </div>
 </template>
 
 <style scoped>
-
 .content-top {
     background-image: url(./assets/images/bg-sidebar-mobile.svg);
     height: 200px;
@@ -124,10 +146,42 @@ import { store } from "./store.js"
     margin-right: 15px;
     border-radius: 15px;
     padding: 25px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
     position: relative;
+}
+.thank-you-wrapper {
+    background-color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    padding: 100px 40px;
+}
+
+.thank-you-icon {
+    width: 80px;
+    height: 80px;
+    background-image: url(./assets/images/icon-thank-you.svg);
+    background-size: cover;
+}
+
+.thank-you-text {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.gray-text {
+    color: gray;
 }
 
 .content-bottom {
@@ -140,8 +194,6 @@ import { store } from "./store.js"
 .space-between {
     justify-content: space-between;
 }
-
-
 
 .next-step-btn {
     background-color: rgb(6, 37, 76);

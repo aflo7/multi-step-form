@@ -18,7 +18,7 @@ import { store } from "./store"
                 </button>
 
                 <div>
-                    <p class="gray-text">STEP 1</p>
+                    <p class="light-gray-text">STEP 1</p>
                     <p class="bold-text">YOUR INFO</p>
                 </div>
             </div>
@@ -31,7 +31,7 @@ import { store } from "./store"
                     2
                 </button>
                 <div>
-                    <p class="gray-text">STEP 2</p>
+                    <p class="light-gray-text">STEP 2</p>
                     <p class="bold-text">SELECT PLAN</p>
                 </div>
             </div>
@@ -43,7 +43,7 @@ import { store } from "./store"
                     3
                 </button>
                 <div>
-                    <p class="gray-text">STEP 3</p>
+                    <p class="light-gray-text">STEP 3</p>
                     <p class="bold-text">ADD-ONS</p>
                 </div>
             </div>
@@ -56,38 +56,27 @@ import { store } from "./store"
                     4
                 </button>
                 <div>
-                    <p class="gray-text">STEP 4</p>
+                    <p class="light-gray-text">STEP 4</p>
                     <p class="bold-text">SUMMARY</p>
                 </div>
             </div>
         </div>
-        <div class="content-right">
+
+        <div class="content-right" v-if="!store.thankYouPage">
             <div>
-                <div
-                    class="content-wrapper"
-                    :class="{ hide: store.count !== 0 }"
-                >
+                <div v-if="store.count === 0" class="content-wrapper">
                     <PersonalInfo />
                 </div>
 
-                <div
-                    class="content-wrapper"
-                    :class="{ hide: store.count !== 1 }"
-                >
+                <div v-if="store.count === 1" class="content-wrapper">
                     <SelectYourPlan />
                 </div>
 
-                <div
-                    class="content-wrapper"
-                    :class="{ hide: store.count !== 2 }"
-                >
+                <div v-if="store.count === 2" class="content-wrapper">
                     <AddOn />
                 </div>
 
-                <div
-                    class="content-wrapper"
-                    :class="{ hide: store.count !== 3 }"
-                >
+                <div v-if="store.count === 3" class="content-wrapper">
                     <FinishingUp />
                 </div>
             </div>
@@ -104,20 +93,31 @@ import { store } from "./store"
                     Go Back
                 </button>
                 <button
+                    v-if="store.count !== 3"
                     class="next-step-btn"
-                    :class="{ hide: store.count === 3 }"
                     @click="store.increment()"
                 >
                     Next Step
                 </button>
 
                 <button
+                v-if="store.count === 3"
                     class="confirm-btn"
-                    :class="{ hide: store.count !== 3 }"
+                    @click="store.showThankYouPage"
                 >
                     Confirm
                 </button>
             </div>
+        </div>
+
+        <div class="thank-you-wrapper" v-if="store.thankYouPage">
+            <div class="thank-you-icon"></div>
+            <p class="thank-you-text">Thank you!</p>
+            <p class="gray-text">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@gmail.com
+            </p>
         </div>
     </div>
 </template>
@@ -159,6 +159,30 @@ import { store } from "./store"
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.thank-you-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.thank-you-icon {
+    width: 80px;
+    height: 80px;
+    background-image: url(./assets/images/icon-thank-you.svg);
+    background-size: cover;
+}
+
+.thank-you-text {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .btn-display-num {
@@ -222,6 +246,10 @@ import { store } from "./store"
 }
 
 .gray-text {
+    color: gray;
+}
+
+.light-gray-text {
     color: lightgray;
 }
 

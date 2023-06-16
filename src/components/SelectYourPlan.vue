@@ -15,7 +15,8 @@ import MonthlyYearlySlider from "./MonthlyYearlySlider.vue"
         >
             <img src="../assets/images/icon-arcade.svg" />
             <div>
-                <h3>Arcade</h3>
+                <p><strong>Arcade</strong></p>
+
                 <p>$9/mo</p>
             </div>
         </div>
@@ -26,7 +27,8 @@ import MonthlyYearlySlider from "./MonthlyYearlySlider.vue"
         >
             <img src="../assets/images/icon-advanced.svg" />
             <div>
-                <h3>Advanced</h3>
+                <p><strong>Advanced</strong></p>
+
                 <p>$12/mo</p>
             </div>
         </div>
@@ -37,7 +39,7 @@ import MonthlyYearlySlider from "./MonthlyYearlySlider.vue"
         >
             <img src="../assets/images/icon-pro.svg" />
             <div>
-                <h3>Pro</h3>
+                <p><strong>Pro</strong></p>
                 <p>$15/mo</p>
             </div>
         </div>
@@ -46,7 +48,6 @@ import MonthlyYearlySlider from "./MonthlyYearlySlider.vue"
             <p><strong>Monthly</strong></p>
             <MonthlyYearlySlider />
             <p><strong>Yearly</strong></p>
-
         </div>
     </div>
 </template>
@@ -71,7 +72,6 @@ import MonthlyYearlySlider from "./MonthlyYearlySlider.vue"
 .selected {
     background-color: rgb(247, 248, 254);
     border: 2px solid rgb(63, 64, 250);
-
 }
 
 .slider-wrapper {
